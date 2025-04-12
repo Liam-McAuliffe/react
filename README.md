@@ -77,12 +77,10 @@ Here's a suggested path to get started:
           console.error('Error calling Gemini API:', error);
           // Check for specific API key errors
           if (error.message.includes('API key not valid')) {
-            res
-              .status(401)
-              .json({
-                error:
-                  'Invalid Gemini API Key. Please check your .env.local file on the server.',
-              });
+            res.status(401).json({
+              error:
+                'Invalid Gemini API Key. Please check your .env.local file on the server.',
+            });
           } else {
             res
               .status(500)
